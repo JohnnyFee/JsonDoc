@@ -1,46 +1,59 @@
 {
-	"type" : "object",
-	"required" : true,
-	"name": "数据包格式规范",
-	"description" : "数据包格式规范",
-	"properties" : {
-		"ApplicationCode" : {
-			"type" : "string",
-			"title" : "应用码",
-			"required" : true,
-			"description" : "明文"
-		},
-		"Content" : {
-			"type" : "object",
-			"title" : "数据包内容",
-			"description" : "密文，BASE64，固定长度",
-			"required" : true,
-			"properties" : {
-				"field1" : {
-					"type" : "string",
-					"name" : "数据域1",
-					"description" : "任意类型",
-					"required" : false
-				},
-				"field2" : {
-					"type" : "string",
-					"name" : "数据域2",
-					"description" : "任意类型",
-					"required" : false
-				}
-			}
-		},
-		"MajorId" : {
-			"type" : "string",
-			"title" : "主识别ID",
-			"description" : "明文，任意类型",
-			"required" : true
-		},
-		"MajorSecretKey" : {
-			"type" : "string",
-			"title" : "密钥版本号",
-			"description" : "明文",
-			"required" : true
-		}
-	}
+    "type" : "object",
+    "required" : true,
+    "name": "Root",
+    "title": "数据包格式规范",
+    "description" : "数据包格式规范",
+    "children" : [
+        {
+            "name":"ApplicationCode",
+            "type" : "string",
+            "title" : "应用码",
+            "required" : true,
+            "description" : "明文",
+            "leaf":true
+        },
+        {
+            "name":"Content",
+            "type" : "object",
+            "title" : "数据包内容",
+            "description" : "密文，BASE64，固定长度",
+            "required" : true,
+            "children" : [
+                {
+                "name":"field1",
+                    "type" : "string",
+                    "name" : "数据域1",
+                    "description" : "任意类型",
+                    "required" : false,
+            "leaf":true
+                },
+                {
+                "name":"field2",
+                    "type" : "string",
+                    "name" : "数据域2",
+                    "description" : "任意类型",
+                    "required" : false,
+            "leaf":true
+                }
+            ]
+        },
+        {
+            "name":"MajorId",
+            "type" : "string",
+            "title" : "主识别ID",
+            "description" : "明文，任意类型",
+            "required" : true,
+            "leaf":true
+        },
+        {
+            "name":"MajorSecretKey",
+            "type" : "string",
+            "title" : "密钥版本号",
+            "description" : "明文",
+            "required" : true,
+            "leaf":true
+        }
+    ]
 }
+ 

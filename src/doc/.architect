@@ -22,6 +22,21 @@
                     "cn": [
                         {
                             "id": "99cc000a-7f5c-4a14-9b92-f95bd76be05e"
+                        },
+                        {
+                            "id": "3d759f8d-19fc-4b76-a523-5da071c4753d"
+                        },
+                        {
+                            "id": "30b7fb26-0ac3-456c-bae5-0ab33f77813b"
+                        },
+                        {
+                            "id": "d43e038f-924a-4abf-922b-940019cde655"
+                        },
+                        {
+                            "id": "3564423b-edb4-43c0-b04b-1dfe38094538"
+                        },
+                        {
+                            "id": "2d2d0fbf-1f53-4277-836f-701181295d37"
                         }
                     ]
                 }
@@ -54,6 +69,9 @@
                 },
                 {
                     "id": "0f81f10e-e2d9-4925-a414-6026c73fa08e"
+                },
+                {
+                    "id": "8face445-6971-42e4-aafb-51f917598c4d"
                 }
             ]
         },
@@ -73,8 +91,8 @@
         "topInstance": "435d931d-3b4d-4584-bd86-6f6fe82f3eea"
     },
     "inspectorState": {
-        "topInstance": "af57b771-d7cc-4476-a312-83ecb21cad61",
-        "selectedInstance": "af57b771-d7cc-4476-a312-83ecb21cad61"
+        "topInstance": "435d931d-3b4d-4584-bd86-6f6fe82f3eea",
+        "selectedInstance": "99cc000a-7f5c-4a14-9b92-f95bd76be05e"
     },
     "codeState": {
         "topInstance": "435d931d-3b4d-4584-bd86-6f6fe82f3eea"

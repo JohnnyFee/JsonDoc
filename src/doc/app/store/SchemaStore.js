@@ -25,10 +25,12 @@ Ext.define('JsonDoc.store.SchemaStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             model: 'JsonDoc.model.Schema',
-            storeId: 'MyTreeStore',
+            storeId: 'SchemaStore',
+            defaultRootId: 'name',
             proxy: {
                 type: 'ajax',
-                url: 'resources/data/数据包格式.json',
+                idParam: 'name',
+                url: 'resources/data/DataStructure.json',
                 reader: {
                     type: 'json'
                 }

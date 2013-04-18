@@ -9,7 +9,9 @@
         "designer|userClassName": "MainViewport",
         "requires": [
             "Ext.tab.Panel",
-            "Ext.layout.container.Border"
+            "Ext.layout.container.Border",
+            "Ext.grid.column.Boolean",
+            "Ext.tree.Panel"
         ],
         "designer|initialView": true,
         "layout": "border"
@@ -26,6 +28,7 @@
             "userConfig": {
                 "layout|flex": 1,
                 "layout|region": "west",
+                "itemId": "tpFiles",
                 "width": 156,
                 "designer|userClassName": "MyTreePanel",
                 "title": "JSON文件"
@@ -56,9 +59,13 @@
             "userConfig": {
                 "layout|flex": 4,
                 "layout|region": "center",
+                "itemId": "tgSchema",
                 "designer|userClassName": "TreeGrid1",
                 "title": "JSON文件内容",
-                "store": "SchemaStore"
+                "store": "SchemaStore",
+                "root": null,
+                "rootVisible": false,
+                "useArrows": true
             },
             "designerId": "78f0de5f-d2e7-48cb-b365-8f7c4c5c7f5d",
             "isBuiltIn": true,
@@ -73,9 +80,83 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyTreeView1"
+                        "designer|userClassName": "MyTreeView1",
+                        "designer|displayName": "tvSchema"
                     },
                     "designerId": "99cc000a-7f5c-4a14-9b92-f95bd76be05e"
+                },
+                {
+                    "type": "Ext.tree.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTreeColumn",
+                        "dataIndex": "name",
+                        "text": "属性名"
+                    },
+                    "designerId": "3d759f8d-19fc-4b76-a523-5da071c4753d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn",
+                        "dataIndex": "type",
+                        "text": "类型"
+                    },
+                    "designerId": "30b7fb26-0ac3-456c-bae5-0ab33f77813b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn1",
+                        "dataIndex": "title",
+                        "text": "标题"
+                    },
+                    "designerId": "d43e038f-924a-4abf-922b-940019cde655"
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyBooleanColumn",
+                        "dataIndex": "required",
+                        "text": "必须",
+                        "falseText": "N",
+                        "trueText": "Y"
+                    },
+                    "designerId": "3564423b-edb4-43c0-b04b-1dfe38094538"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn2",
+                        "dataIndex": "description",
+                        "text": "说明",
+                        "flex": 1
+                    },
+                    "designerId": "2d2d0fbf-1f53-4277-836f-701181295d37"
                 }
             ]
         }

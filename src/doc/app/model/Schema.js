@@ -29,6 +29,9 @@ Ext.define('JsonDoc.model.Schema', {
         },
         {
             name: 'description'
+        },
+        {
+            name: 'name'
         }
     ]
 });

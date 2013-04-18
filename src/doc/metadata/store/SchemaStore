@@ -7,8 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "model": "Schema",
-        "storeId": "MyTreeStore",
-        "designer|userClassName": "SchemaStore"
+        "storeId": "SchemaStore",
+        "designer|userClassName": "SchemaStore",
+        "defaultRootId": "name"
     },
     "designerId": "af57b771-d7cc-4476-a312-83ecb21cad61",
     "cn": [
@@ -22,7 +23,8 @@
             "userConfig": {
                 "designer|userClassName": "MyAjaxProxy",
                 "designer|displayName": "SchemaAjaxProxy",
-                "url": "resources/data/数据包格式.json"
+                "idParam": "name",
+                "url": "resources/data/DataStructure.json"
             },
             "designerId": "6a5b2f98-22ab-4e4c-8243-367b18bcd306",
             "cn": [

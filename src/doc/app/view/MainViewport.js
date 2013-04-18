@@ -18,7 +18,9 @@ Ext.define('JsonDoc.view.MainViewport', {
 
     requires: [
         'Ext.tab.Panel',
-        'Ext.layout.container.Border'
+        'Ext.layout.container.Border',
+        'Ext.grid.column.Boolean',
+        'Ext.tree.Panel'
     ],
 
     layout: {
@@ -34,6 +36,7 @@ Ext.define('JsonDoc.view.MainViewport', {
                     xtype: 'treepanel',
                     flex: 1,
                     region: 'west',
+                    itemId: 'tpFiles',
                     width: 156,
                     title: 'JSON文件',
                     viewConfig: {
@@ -44,11 +47,44 @@ Ext.define('JsonDoc.view.MainViewport', {
                     xtype: 'treepanel',
                     flex: 4,
                     region: 'center',
+                    itemId: 'tgSchema',
                     title: 'JSON文件内容',
                     store: 'SchemaStore',
+                    rootVisible: false,
+                    useArrows: true,
                     viewConfig: {
 
-                    }
+                    },
+                    columns: [
+                        {
+                            xtype: 'treecolumn',
+                            dataIndex: 'name',
+                            text: '属性名'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'type',
+                            text: '类型'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'title',
+                            text: '标题'
+                        },
+                        {
+                            xtype: 'booleancolumn',
+                            dataIndex: 'required',
+                            text: '必须',
+                            falseText: 'N',
+                            trueText: 'Y'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'description',
+                            text: '说明',
+                            flex: 1
+                        }
+                    ]
                 }
             ]
         });
