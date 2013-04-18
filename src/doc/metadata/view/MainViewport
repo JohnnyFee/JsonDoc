@@ -1,0 +1,83 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainViewport",
+        "requires": [
+            "Ext.tab.Panel",
+            "Ext.layout.container.Border"
+        ],
+        "designer|initialView": true,
+        "layout": "border"
+    },
+    "designerId": "435d931d-3b4d-4584-bd86-6f6fe82f3eea",
+    "cn": [
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|region": "west",
+                "width": 156,
+                "designer|userClassName": "MyTreePanel",
+                "title": "JSON文件"
+            },
+            "designerId": "dc94752b-f262-41f8-a9c1-43bd08c48de4",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTreeView"
+                    },
+                    "designerId": "749def1e-fd51-4ce8-870b-081187d2d919"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tree.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 4,
+                "layout|region": "center",
+                "designer|userClassName": "TreeGrid1",
+                "title": "JSON文件内容",
+                "store": "SchemaStore"
+            },
+            "designerId": "78f0de5f-d2e7-48cb-b365-8f7c4c5c7f5d",
+            "isBuiltIn": true,
+            "iconCls": "icon-treegridpanel",
+            "autoName": "TreeGrid",
+            "cn": [
+                {
+                    "type": "Ext.tree.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyTreeView1"
+                    },
+                    "designerId": "99cc000a-7f5c-4a14-9b92-f95bd76be05e"
+                }
+            ]
+        }
+    ]
+}

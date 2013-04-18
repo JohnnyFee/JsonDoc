@@ -1,0 +1,63 @@
+{
+    "name": "doc",
+    "settings": {
+        "urlPrefix": "http://localhost:8080/jsondoc",
+        "exportPath": ""
+    },
+    "xdsVersion": "2.2.1",
+    "xdsBuild": 951,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000500,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "435d931d-3b4d-4584-bd86-6f6fe82f3eea": {
+            "paths": [
+                "metadata/view/MainViewport",
+                "app/view/override/MainViewport.js",
+                "app/view/MainViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MainViewport"
+        },
+        "19294980-edb7-4d7e-ba9b-86f93791bd73": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "8542a4c5-af60-4f24-883a-956adedd9c1d": {
+            "paths": [
+                "metadata/model/Schema",
+                "app/model/override/Schema.js",
+                "app/model/Schema.js"
+            ],
+            "className": "Schema"
+        },
+        "af57b771-d7cc-4476-a312-83ecb21cad61": {
+            "paths": [
+                "metadata/store/SchemaStore",
+                "app/store/override/SchemaStore.js",
+                "app/store/SchemaStore.js"
+            ],
+            "className": "SchemaStore"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "435d931d-3b4d-4584-bd86-6f6fe82f3eea"
+        ],
+        "store": [
+            "af57b771-d7cc-4476-a312-83ecb21cad61"
+        ],
+        "controller": [],
+        "model": [
+            "8542a4c5-af60-4f24-883a-956adedd9c1d"
+        ],
+        "resource": [
+            "19294980-edb7-4d7e-ba9b-86f93791bd73"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

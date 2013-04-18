@@ -1,0 +1,44 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "Schema",
+        "storeId": "MyTreeStore",
+        "designer|userClassName": "SchemaStore"
+    },
+    "designerId": "af57b771-d7cc-4476-a312-83ecb21cad61",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy",
+                "designer|displayName": "SchemaAjaxProxy",
+                "url": "resources/data/数据包格式.json"
+            },
+            "designerId": "6a5b2f98-22ab-4e4c-8243-367b18bcd306",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader"
+                    },
+                    "designerId": "4423e81e-1f6e-4b36-adfc-9c89958571bc"
+                }
+            ]
+        }
+    ]
+}
