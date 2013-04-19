@@ -1,0 +1,34 @@
+{
+	"type" : "object",
+	"required" : true,
+	"title" : "出厂初始化-输入",
+	"description" : "出厂初始化-输入 数据包格式规范",
+	"properties" : {
+		"DeviceId" : {
+			"type" : "string",
+			"title" : "设备ID",
+			"required" : true,
+			"description" : "设备ID"
+		},
+		"Supplier" : {
+			"type" : "object",
+			"title" : "供应商信息",
+			"description" : "",
+			"required" : false,
+			"properties" : {
+				"Name" : {
+					"type" : "string",
+					"title" : "供应商名称",
+					"description" : "",
+					"required" : false
+				}
+			}
+		},
+		"InitialPublicKeyAlias" : {
+			"type" : "string",
+			"title" : "初始公钥别名",
+			"description" : "",
+			"required" : true
+		}
+	}
+}
