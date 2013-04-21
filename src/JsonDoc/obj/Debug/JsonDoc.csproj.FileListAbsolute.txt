@@ -6,4 +6,5 @@ D:\project\JsonDoc\src\JsonDoc\bin\Debug\Newtonsoft.Json.xml
 D:\project\JsonDoc\src\JsonDoc\obj\Debug\JsonDoc.csprojResolveAssemblyReference.cache
 D:\project\JsonDoc\src\JsonDoc\obj\Debug\JsonDoc.exe
 D:\project\JsonDoc\src\JsonDoc\obj\Debug\JsonDoc.pdb
-D:\project\JsonDoc\src\JsonDoc\bin\Debug\schemas\出厂初始化-Input.json
+D:\project\JsonDoc\src\JsonDoc\bin\Debug\nunit.framework.dll
+D:\project\JsonDoc\src\JsonDoc\bin\Debug\nunit.framework.xml

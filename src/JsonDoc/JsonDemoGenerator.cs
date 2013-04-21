@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json.Linq;
@@ -7,16 +6,22 @@ using Newtonsoft.Json.Schema;
 
 namespace JsonDoc
 {
-    public class Program
+    /// <summary>
+    /// Generate Json Demo according to Json Schema
+    /// </summary>
+    public class JsonDemoGenerator
     {
-        private const string SchemaPath = "../Schemas";
+        private const string DefaultStringValue = "string value";
+        private const int DefaultIntValue = 100;
+        private const bool DefaultBoolValue = false;
+        private const float DefaultFloatValue = 0.01f;
 
         /// <summary>
         ///     处理所有的Schema。
         /// </summary>
         private void ProcessSchemas()
         {
-            var schmeaDirInfo = new DirectoryInfo(SchemaPath);
+            var schmeaDirInfo = new DirectoryInfo("");
             IEnumerable<FileInfo> fileInfos = schmeaDirInfo.EnumerateFiles();
 
             var content = new StringBuilder();
@@ -26,10 +31,13 @@ namespace JsonDoc
             }
         }
 
-        private JObject ExtractJsonFromScheme(string schemaKey, JsonSchema schema)
+        public JToken Run(JsonSchema schema)
         {
-            var jObject = new JObject();
+            return Run(null, schema);
+        }
 
+        private JToken Run(string schemaKey, JsonSchema schema)
+        {
             JToken token = null;
             switch (schema.Type)
             {
@@ -37,29 +45,28 @@ namespace JsonDoc
                     token = new JObject();
                     foreach (var property in schema.Properties)
                     {
-                        ((JObject) token).Add(property.Key, ExtractJsonFromScheme(property.Key, property.Value));
+                        ((JObject) token).Add(property.Key, Run(property.Key, property.Value));
                     }
                     break;
                 case JsonSchemaType.Array:
                     // token = new List<string> {"item1", "item2"};
                     break;
                 case JsonSchemaType.Boolean:
-                    token = false;
+                    token = DefaultBoolValue;
                     break;
                 case JsonSchemaType.Float:
-                    token = 1.2;
+                    token = DefaultFloatValue;
                     break;
                 case JsonSchemaType.Integer:
-                    token = 0;
+                    token = DefaultIntValue;
                     break;
                 case JsonSchemaType.String:
-                    token = "string value";
+                    token = DefaultStringValue;
                     break;
             }
 
             token = schema.Default ?? token;
-            jObject.Add(schemaKey, JToken.FromObject(token));
-            return jObject;
+            return token;
         }
 
         private JObject DeserializeSchema(string schemaFilePath)
@@ -76,23 +83,6 @@ namespace JsonDoc
 
             var root = new JObject();
             return root;
-        }
-
-        public static void Main(string[] args)
-        {
-            var program = new Program();
-
-            const string filePath = "./schemas/出厂初始化-Input.json";
-            JsonSchema schema = JsonSchema.Parse(File.ReadAllText(filePath));
-
-            Console.WriteLine(schema.Type);
-
-            foreach (var property in schema.Properties)
-            {
-                Console.WriteLine(property.Key + " - " + property.Value.Type);
-            }
-
-            Console.ReadKey();
         }
     }
 }
