@@ -1,0 +1,61 @@
+{
+	"type" : "object",
+	"required" : true,
+	"title" : "TitleObject",
+	"description" : "Object Type",
+	"properties" : {
+		"Field1" : {
+			"type" : "string",
+			"title" : "Title1",
+			"required" : true,
+			"description" : "Title1 Description"
+		},
+		"Field2" : {
+			"type" : "array",
+			"title" : "Title2",
+			"description" : "",
+			"items" : {
+				"type" : "object",
+				"properties" : {
+					"Field21" : {
+						"type" : "string",
+						"title" : "Title21",
+						"description" : ""
+						,
+					},
+					"Field22" : {
+						"type" : "boolean",
+						"title" : "Title21",
+						"description" : ""
+					}
+				}
+			}
+		},
+		"Field3" : {
+			"type" : "array",
+			"title" : "Title3",
+			"description" : "",
+			"items" : {
+				"type" : "string"
+			}
+		},
+		"Field4" : {
+			"type" : "array",
+			"title" : "Title4",
+			"description" : "",
+			"items" : {
+				"type" : "object",
+				"properties" : {
+					"Field41" : {
+						"type" : "array",
+						"title" : "Title411",
+						"description" : "",
+						"items" : {
+							"type" : "boolean"
+						}
+					}
+				}
+			}
+		}
+	}
+}

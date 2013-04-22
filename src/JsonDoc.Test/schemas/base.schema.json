@@ -1,33 +1,34 @@
 {
 	"type" : "object",
 	"required" : true,
-	"title" : "出厂初始化-输入",
-	"description" : "出厂初始化-输入 数据包格式规范",
+	"title" : "TitleObject",
+	"description" : "Object Type",
 	"properties" : {
-		"DeviceId" : {
+		"Field1" : {
 			"type" : "string",
-			"title" : "设备ID",
+			"title" : "Title1",
 			"required" : true,
-			"description" : "设备ID"
+			"description" : "Title1 Description"
 		},
-		"Supplier" : {
+		"Field2" : {
 			"type" : "object",
-			"title" : "供应商信息",
+			"title" : "Title2",
 			"description" : "",
 			"required" : false,
 			"properties" : {
-				"Name" : {
+				"Field21" : {
 					"type" : "string",
-					"title" : "供应商名称",
+					"title" : "Title21",
 					"description" : "",
 					"required" : false
 				}
 			}
 		},
-		"InitialPublicKeyAlias" : {
+		"Field3" : {
 			"type" : "string",
-			"title" : "初始公钥别名",
+			"title" : "Title3",
 			"description" : "",
+			"default":"field3 value",
 			"required" : true
 		}
 	}

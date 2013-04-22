@@ -1,0 +1,7 @@
+{
+	"Field1" : "string value",
+	"Field2" : {
+		"Field21" : "string value"
+	},
+	"Field3" : "field3 value"
+}

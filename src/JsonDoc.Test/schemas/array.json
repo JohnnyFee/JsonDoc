@@ -1,0 +1,16 @@
+{
+	"Field1" : "string value",
+	"Field2" : [{
+				"Field21" : "string value",
+				"Field22" : false
+			}, {
+				"Field21" : "string value",
+				"Field22" : false
+			}],
+	"Field3" : ["string value", "string value"],
+	"Field4" : [{
+				"Field41" : [false, false]
+			}, {
+				"Field41" : [false, false]
+			}]
+}

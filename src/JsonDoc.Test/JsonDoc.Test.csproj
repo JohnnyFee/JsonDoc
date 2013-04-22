@@ -53,18 +53,31 @@
   </Choose>
   <ItemGroup>
     <Compile Include="JsonDemoGeneratorTest.cs" />
+    <Compile Include="JsonDocFormatterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="schemas\出厂初始化-Input.json">
+    <None Include="schemas\base.schema.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="schemas\base.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="schemas\array.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="schemas\array.schema.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="schemas\object.schema.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JsonDoc\JsonDoc.csproj">
-      <Project>{6635a067-dce4-4f78-9734-c77cd4a909d2}</Project>
-      <Name>JsonDoc</Name>
+    <ProjectReference Include="..\JsonDoc.Core\JsonDoc.Core.csproj">
+      <Project>{32bf7dd7-13d6-4d95-8cf7-b69e76605d81}</Project>
+      <Name>JsonDoc.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

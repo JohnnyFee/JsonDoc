@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 
-namespace JsonDoc
+namespace JsonDoc.Core
 {
     /// <summary>
-    /// Generate Json Demo according to Json Schema
+    ///     Generate Json Demo.
+    ///     TODO json schema validate
     /// </summary>
     public class JsonDemoGenerator
     {
@@ -17,26 +15,11 @@ namespace JsonDoc
         private const float DefaultFloatValue = 0.01f;
 
         /// <summary>
-        ///     处理所有的Schema。
+        ///     Generate json demo for a schema object.
         /// </summary>
-        private void ProcessSchemas()
-        {
-            var schmeaDirInfo = new DirectoryInfo("");
-            IEnumerable<FileInfo> fileInfos = schmeaDirInfo.EnumerateFiles();
-
-            var content = new StringBuilder();
-            foreach (FileInfo fileInfo in fileInfos)
-            {
-                // TODO 
-            }
-        }
-
-        public JToken Run(JsonSchema schema)
-        {
-            return Run(null, schema);
-        }
-
-        private JToken Run(string schemaKey, JsonSchema schema)
+        /// <param name="schema"></param>
+        /// <returns></returns>
+        public static JToken Generate(JsonSchema schema)
         {
             JToken token = null;
             switch (schema.Type)
@@ -45,11 +28,19 @@ namespace JsonDoc
                     token = new JObject();
                     foreach (var property in schema.Properties)
                     {
-                        ((JObject) token).Add(property.Key, Run(property.Key, property.Value));
+                        ((JObject) token).Add(property.Key, Generate(property.Value));
                     }
                     break;
                 case JsonSchemaType.Array:
-                    // token = new List<string> {"item1", "item2"};
+                    token = new JArray();
+                    // TODO 为什么items是List类型
+                    foreach (JsonSchema item in schema.Items)
+                    {
+                        // Add tow element for array.
+                        JToken element = Generate(item);
+                        ((JArray) token).Add(element);
+                        ((JArray) token).Add(element);
+                    }
                     break;
                 case JsonSchemaType.Boolean:
                     token = DefaultBoolValue;
@@ -67,22 +58,6 @@ namespace JsonDoc
 
             token = schema.Default ?? token;
             return token;
-        }
-
-        private JObject DeserializeSchema(string schemaFilePath)
-        {
-            string content = File.ReadAllText(schemaFilePath);
-            JsonSchema schema = JsonSchema.Parse(schemaFilePath);
-
-            while (schema.Properties.Count > 0)
-            {
-            }
-            foreach (var property in schema.Properties)
-            {
-            }
-
-            var root = new JObject();
-            return root;
         }
     }
 }

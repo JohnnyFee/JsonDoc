@@ -1,0 +1,100 @@
+{
+	"type" : "object",
+	"required" : true,
+	"title" : "出厂初始化",
+	"description" : "出厂初始化-输出 数据包格式规范",
+	"properties" : {
+		"DeviceId" : {
+			"type" : "string",
+			"title" : "设备ID",
+			"required" : true,
+			"description" : "设备ID"
+		},
+		"OemVenderName" : {
+			"type" : "string",
+			"title" : "OEM厂家名称",
+			"required" : true,
+			"description" : ""
+		},
+		"SupplierName" : {
+			"type" : "string",
+			"title" : "供应商名称",
+			"required" : true,
+			"description" : ""
+		},
+		"VersionInfo" : {
+			"type" : "object",
+			"title" : "软件版本信息",
+			"required" : true,
+			"description" : "",
+			"properties" : {
+				"Version" : {
+					"type" : "string",
+					"title" : "版本号",
+					"description" : "",
+					"required" : false
+				}
+			}
+		},
+		"BasicInfo" : {
+			"type" : "object",
+			"title" : "基础信息",
+			"description" : "",
+			"required" : true,
+			"properties" : {
+				"Field1" : {
+					"type" : "string",
+					"title" : "基础信息1",
+					"description" : "",
+					"required" : false
+				},
+				"Field2" : {
+					"type" : "string",
+					"title" : "基础信息2",
+					"description" : "",
+					"required" : false
+				}
+			}
+		},
+		"ApplicationInfo" : {
+			"type" : "object",
+			"title" : "应用信息",
+			"description" : "",
+			"required" : true,
+			"properties" : {
+				"Field1" : {
+					"type" : "string",
+					"title" : "应用信息1",
+					"description" : "",
+					"required" : false
+				},
+				"Field2" : {
+					"type" : "string",
+					"title" : "应用信息2",
+					"description" : "",
+					"required" : false
+				}
+			}
+		},
+		"PaymentInfo" : {
+			"type" : "object",
+			"title" : "交易信息",
+			"description" : "",
+			"required" : true,
+			"properties" : {
+				"Field1" : {
+					"type" : "string",
+					"title" : "交易信息1",
+					"description" : "",
+					"required" : false
+				},
+				"Field2" : {
+					"type" : "string",
+					"title" : "交易信息2",
+					"description" : "",
+					"required" : false
+				}
+			}
+		}
+	}
+}

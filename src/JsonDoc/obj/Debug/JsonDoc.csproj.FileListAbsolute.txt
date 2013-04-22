@@ -1,10 +1,11 @@
 D:\project\JsonDoc\src\JsonDoc\bin\Debug\JsonDoc.exe.config
 D:\project\JsonDoc\src\JsonDoc\bin\Debug\JsonDoc.exe
 D:\project\JsonDoc\src\JsonDoc\bin\Debug\JsonDoc.pdb
-D:\project\JsonDoc\src\JsonDoc\bin\Debug\Newtonsoft.Json.dll
-D:\project\JsonDoc\src\JsonDoc\bin\Debug\Newtonsoft.Json.xml
+D:\project\JsonDoc\src\JsonDoc\bin\Debug\CommandLine.dll
+D:\project\JsonDoc\src\JsonDoc\bin\Debug\nunit.framework.dll
+D:\project\JsonDoc\src\JsonDoc\bin\Debug\CommandLine.xml
+D:\project\JsonDoc\src\JsonDoc\bin\Debug\nunit.framework.xml
 D:\project\JsonDoc\src\JsonDoc\obj\Debug\JsonDoc.csprojResolveAssemblyReference.cache
 D:\project\JsonDoc\src\JsonDoc\obj\Debug\JsonDoc.exe
 D:\project\JsonDoc\src\JsonDoc\obj\Debug\JsonDoc.pdb
-D:\project\JsonDoc\src\JsonDoc\bin\Debug\nunit.framework.dll
-D:\project\JsonDoc\src\JsonDoc\bin\Debug\nunit.framework.xml
+D:\project\JsonDoc\src\JsonDoc\obj\Debug\JsonDoc.csprojFakesResolveAssemblyReference.cache
