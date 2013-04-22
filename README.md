@@ -1,5 +1,5 @@
 #JsonDoc
-JsonDoc根据Json Schema来生成Markdown文件的工具。
+JsonDoc为根据Json Schema来生成Markdown文件的工具。
 
 使用的技术：
 
