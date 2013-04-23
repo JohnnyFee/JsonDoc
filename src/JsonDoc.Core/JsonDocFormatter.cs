@@ -48,6 +48,7 @@ namespace JsonDoc.Core
 
         private static string AsMarkdown(JsonSchema schema, Int32 level)
         {
+            // TODO 处理Array类型
             if (!schema.Type.Equals(JsonSchemaType.Object))
             {
                 return null;
@@ -94,7 +95,6 @@ namespace JsonDoc.Core
             sb.AppendLine();
 
             // 输出Object属性
-
             IEnumerable<KeyValuePair<string, JsonSchema>> objectProperties =
                 schema.Properties.Where(o => o.Value.Type.Equals(JsonSchemaType.Object));
             level++;

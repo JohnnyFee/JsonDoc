@@ -5,11 +5,9 @@ namespace JsonDoc.Core
 {
     /// <summary>
     ///     Generate Json Demo.
-    ///     TODO json schema validate
     /// </summary>
     public class JsonDemoGenerator
     {
-        private const string DefaultStringValue = "string value";
         private const int DefaultIntValue = 100;
         private const bool DefaultBoolValue = false;
         private const float DefaultFloatValue = 0.01f;
@@ -52,7 +50,7 @@ namespace JsonDoc.Core
                     token = DefaultIntValue;
                     break;
                 case JsonSchemaType.String:
-                    token = DefaultStringValue;
+                    token = schema.Title;
                     break;
             }
 

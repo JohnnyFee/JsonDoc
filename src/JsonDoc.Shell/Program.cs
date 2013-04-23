@@ -18,7 +18,8 @@ namespace JsonDoc.Shell
             IQueryable<FileInfo> fileInfos =
                 directory.EnumerateFiles()
                          .AsQueryable()
-                         .Where(fileInfo => fileInfo.Name.ToLower().EndsWith("schema.json"));
+                         .Where(fileInfo => fileInfo.Name.ToLower().EndsWith("schema.json"))
+                         .OrderBy(fileInfo => fileInfo.Name);
 
             if (!fileInfos.Any())
             {
@@ -54,8 +55,8 @@ namespace JsonDoc.Shell
 
         public static void Main(string[] args)
         {
-            args =
-                "jsondoc -s D:/project/GuiZhouAbc2/doc/数据规范 -o D:/project/GuiZhouAbc2/doc/数据规范/index.md -m ".Split(' ');
+//            args =
+//                "jsondoc -s D:/project/GuiZhouAbc2/doc/数据规范 -o D:/project/GuiZhouAbc2/doc/数据规范/index.md -m ".Split(' ');
             var options = new Options();
             bool success = Parser.Default.ParseArguments(args, options);
             if (!success)
@@ -72,8 +73,6 @@ namespace JsonDoc.Shell
                     File.WriteAllText(options.OutputFile ?? "doc.md", markdown);
                 }
             }
-
-            Console.ReadLine();
         }
     }
 }
