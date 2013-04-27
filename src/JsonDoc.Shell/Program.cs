@@ -54,8 +54,8 @@ namespace JsonDoc.Shell
 
         public static void Main(string[] args)
         {
-            args =
-                "jsondoc -s D:/project/GuiZhouAbc2/doc/数据规范 -o D:/project/GuiZhouAbc2/doc/数据规范/index.md -m ".Split(' ');
+//            args =
+//                "jsondoc -s D:/project/GuiZhouAbc2/doc/数据规范 -o D:/project/GuiZhouAbc2/doc/数据规范/index.md -m ".Split(' ');
             var options = new Options();
             bool success = Parser.Default.ParseArguments(args, options);
             if (!success)
@@ -73,7 +73,7 @@ namespace JsonDoc.Shell
                 }
             }
 
-            Console.ReadLine();
+            // Console.ReadLine();
         }
     }
 }
