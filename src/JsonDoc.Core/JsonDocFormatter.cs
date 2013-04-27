@@ -48,7 +48,6 @@ namespace JsonDoc.Core
 
         private static string AsMarkdown(JsonSchema schema, Int32 level)
         {
-            // TODO 处理Array类型
             if (!schema.Type.Equals(JsonSchemaType.Object))
             {
                 return null;
@@ -60,47 +59,56 @@ namespace JsonDoc.Core
             string prefix = string.Empty;
             for (int i = 0; i < level; i++)
             {
-                prefix += "##";
+                prefix += "#";
             }
 
             // 输出title
             sb.Append(prefix).Append(schema.Id == null ? "" : schema.Id + " ").AppendLine(schema.Title);
 
             // 如果是接口 输出描述
-            if (schema.Id != null)
-            {
-                sb.AppendLine(schema.Description ?? string.Empty);
-            }
-
+            sb.AppendLine(schema.Description ?? string.Empty);
             sb.AppendLine();
 
             // 输出表格头
             sb.AppendLine(@"|字段名|类型|标题|必须|说明|
 |----|----|----|----|");
 
+            // 输出Object属性
+            List<JsonSchema> objectProperties =
+                schema.Properties.Where(o => o.Value.Type.Equals(JsonSchemaType.Object)).Select(o => o.Value).ToList();
+
             // 输出属性行
             foreach (var property in schema.Properties)
             {
-                // TODO process array
+                string description = property.Value.Description;
+                string type = property.Value.Type.ToString();
                 if (property.Value.Type.Equals(JsonSchemaType.Object))
                 {
-                    property.Value.Description = string.Format("请参考 `{0}`", property.Value.Title);
+                    description = string.Format("请参考 `{0}`", property.Value.Title);
+                }
+                else if (property.Value.Type.Equals(JsonSchemaType.Array))
+                {
+                    JsonSchemaType? itemType = property.Value.Items[0].Type;
+                    type += "[" + itemType + "]";
+                    if (itemType.Equals(JsonSchemaType.Object))
+                    {
+                        description = string.Format("请参考 `{0}`", property.Value.Title);
+                        property.Value.Items[0].Title = property.Value.Title;
+                        objectProperties.Add(property.Value.Items[0]);
+                    }
                 }
 
                 JsonSchema value = property.Value;
-                sb.AppendLine(string.Format("|{0}|{1}|{2}|{3}|{4}|", property.Key, value.Type, value.Title,
-                                            value.Required, value.Description));
+                sb.AppendLine(string.Format("|{0}|{1}|{2}|{3}|{4}|", property.Key, type, value.Title,
+                                            value.Required, description));
             }
 
             sb.AppendLine();
 
-            // 输出Object属性
-            IEnumerable<KeyValuePair<string, JsonSchema>> objectProperties =
-                schema.Properties.Where(o => o.Value.Type.Equals(JsonSchemaType.Object));
             level++;
-            foreach (var objectProperty in objectProperties)
+            foreach (JsonSchema objectProperty in objectProperties)
             {
-                sb.AppendLine(AsMarkdown(objectProperty.Value, level));
+                sb.AppendLine(AsMarkdown(objectProperty, level));
             }
 
 

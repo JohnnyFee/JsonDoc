@@ -18,8 +18,7 @@ namespace JsonDoc.Shell
             IQueryable<FileInfo> fileInfos =
                 directory.EnumerateFiles()
                          .AsQueryable()
-                         .Where(fileInfo => fileInfo.Name.ToLower().EndsWith("schema.json"))
-                         .OrderBy(fileInfo => fileInfo.Name);
+                         .Where(fileInfo => fileInfo.Name.ToLower().EndsWith("schema.json"));
 
             if (!fileInfos.Any())
             {
@@ -73,6 +72,8 @@ namespace JsonDoc.Shell
                     File.WriteAllText(options.OutputFile ?? "doc.md", markdown);
                 }
             }
+
+            // Console.ReadLine();
         }
     }
 }
