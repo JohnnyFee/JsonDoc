@@ -54,15 +54,10 @@ namespace JsonDoc.Shell
 
         public static void Main(string[] args)
         {
-//            args =
-//                "jsondoc -s D:/project/GuiZhouAbc2/doc/数据规范 -o D:/project/GuiZhouAbc2/doc/数据规范/index.md -m ".Split(' ');
+            // args = "jsondoc -s D:/project/GuiZhouAbc2/doc/数据规范 -o D:/project/GuiZhouAbc2/doc/数据规范/index.md -m ".Split(' ');
+            // args = "jsondoc --help".Split(' ');
             var options = new Options();
-            bool success = Parser.Default.ParseArguments(args, options);
-            if (!success)
-            {
-                Console.WriteLine(options.GetUsage());
-                return;
-            }
+            Parser.Default.ParseArguments(args, options);
 
             if (options.Marcdown)
             {
@@ -72,8 +67,6 @@ namespace JsonDoc.Shell
                     File.WriteAllText(options.OutputFile ?? "doc.md", markdown);
                 }
             }
-
-            // Console.ReadLine();
         }
     }
 }
