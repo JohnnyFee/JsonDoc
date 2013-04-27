@@ -2,6 +2,7 @@
 .sass-cache/
 ~*.*
 *.class
+*.suo
 *.aj
 *.umr~
 *.Cache
